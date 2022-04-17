@@ -83,6 +83,9 @@ rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server
 cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-compose.yml
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
 
+IP_ADDR = `ip addr show | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' | grep 192`
+echo $IP_ADDR
+
 # su root
 # adduser jimmy docker
 # wget -O /usr/local/bin/favanet.sh tinyurl.com/favanet && chmod +x /usr/local/bin/favanet.sh && favanet.sh && cd docker && docker-compose up -d
