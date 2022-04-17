@@ -56,6 +56,12 @@ sudo mkdir /media/duncan
 sudo mkdir /media/nvr
 sudo mkdir /media/backups
 
+sudo mount 192.168.1.98:/volume1/movies /media/bigfundamental
+sudo mount 192.168.1.99:/volume1/family /media/duncan
+sudo mount 192.168.1.99:/volume1/nvr /media/nvr
+sudo mount 192.168.1.99:/volume1/backups /media/backups
+df -h
+
 echo '----------------'
 echo 'Updating fstab'
 echo '----------------'
@@ -77,6 +83,6 @@ rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server
 cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-compose.yml
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
 
-
 # su root
+# adduser jimmy docker
 # wget -O /usr/local/bin/favanet.sh tinyurl.com/favanet && chmod +x /usr/local/bin/favanet.sh && favanet.sh && cd docker && docker-compose up -d
