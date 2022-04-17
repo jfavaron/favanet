@@ -64,5 +64,6 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDh4cvbaC+wQlkY2pvaIvbOKSTmbwH6mS5+tT
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDP6T4PozkuLw/dwkNH7YbHsd/RBh+s8bCy+ftOSmpkF72znmwHOu4UubX5zlDq1tziqkFpxr08d+sBWgchJSH/i606oWbweVMjWG4qyipV4p+R4fhiety1GVv60HHywUMDo6yiMOEIq5MkPPOp1ygIE3EuEZ12+BKVyN32HUUyfvXfUm9FN2oee3DA5ghQZSF/OhX5fgz3Mesd2Y3MWOr1TnflC6U70qaMCJdkNGoPjPE2AM7qPKXIu76pdCUvORtJyndFLfrV2cGPJXO88YVQyPK4IOXNCL0zAALSPymsFTdx2VIrM87xhGNPuBl6D25zp4g0NcYQ4rt87FZBS7SrFOngqd1/cP84Fdh91DogNx7BPSLEzPIQAgQvKfaHTljrMc/rQx9duYy56zFEFkg8eIPjRyUG9Ky8Ov8fArPF15R+u2tQernIkVWzhRzNuSU2NMQMzNH+3AlA2fF33A+Fsz2iYYyQLjTcb0KIHqEPRbZQgkou3EV7dg53SYQQDys= jimmy@favanet" >> /home/jimmy/.ssh/authorized_keys
 
 rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/uptime-kuma /home/jimmy/docker/uptime-kuma
+rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/dashy /home/jimmy/docker/dashy
 cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-compose.yml
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
