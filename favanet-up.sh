@@ -9,7 +9,7 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 
 ### apt-get
 sudo apt-get update
-sudo apt-get install python3-setuptools python3 libffi-dev libssl-dev nfs-common -y
+sudo apt-get install python3-setuptools python3 libffi-dev libssl-dev nfs-common cloud-init -y
 # sudo python3 -m easy_install install pip
 python3 -m pip --version
 
@@ -83,8 +83,10 @@ rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server
 cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-compose.yml
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
 
+adduser jimmy sudo
 IP_ADDR=`ip addr show | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $2}' | grep 192`
 echo $IP_ADDR
+
 
 # su root
 # adduser jimmy docker
