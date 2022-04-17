@@ -78,7 +78,5 @@ cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-comp
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
 
 
-
-# wget -O /usr/local/bin/favanet.sh https://raw.githubusercontent.com/jfavaron/favanet/master/favanet-up.sh
-# chmod +x /usr/local/bin/favanet.sh
-# favanet.sh
+# su root
+# wget -O /usr/local/bin/favanet.sh tinyurl.com/favanet && chmod +x /usr/local/bin/favanet.sh && favanet.sh && cd docker && docker-compose up -d
