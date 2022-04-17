@@ -1,12 +1,17 @@
 Write-Host 'Preparing to deploy Favanet Ubuntu virtual machine.'
 Write-Host 'Building VM now'
 
-$name="ubuntu-favanet-1"
-$vcpu=4
-$RAMGB=16
-$diskGB=30
+# $name="iso-builder"
+# $name="ubuntu-favanet-1"
+# $name="ubuntu-favanet-2"
+$name="ubuntu-favanet-3"
+$vcpu=2
+$RAMGB=12
+$diskGB=40
 # $iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
-$iso="C:\Users\jimmy\Downloads\first-test.iso"
+# $iso="C:\Users\jimmy\Downloads\first-test.iso"
+$iso="C:\Users\jimmy\Downloads\no-interactive.iso"
+# $iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
 
 # Convert GB to MB
 $disksize = $diskGB * 1024

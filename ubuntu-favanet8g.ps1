@@ -3,14 +3,14 @@ Write-Host 'Building VM now'
 
 # $name="iso-builder"
 # $name="ubuntu-favanet-1"
-$name="ubuntu-favanet-2"
-# $name="ubuntu-favanet-3"
+# $name="ubuntu-favanet-2"
+$name="ubuntu-favanet-3"
 $vcpu=1
 $RAMGB=4
 $diskGB=20
-$iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
+# $iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
 # $iso="C:\Users\jimmy\Downloads\first-test.iso"
-# $iso="C:\Users\jimmy\Downloads\no-interactive.iso"
+$iso="C:\Users\jimmy\Downloads\no-interactive.iso"
 # $iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
 
 # Convert GB to MB
