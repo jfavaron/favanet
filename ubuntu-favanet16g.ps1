@@ -5,6 +5,8 @@ $name="ubuntu-favanet-1"
 $vcpu=4
 $RAMGB=16
 $diskGB=30
+# $iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
+$iso="C:\Users\jimmy\Downloads\first-test.iso"
 
 # Convert GB to MB
 $disksize = $diskGB * 1024
@@ -28,7 +30,7 @@ cd "C:\Program Files\Oracle\VirtualBox\"
 .\VBoxManage storageattach "$name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium D:\vms\$name.vdi
 
 # unattending install aka user name and computer name
-.\VBoxManage unattended install "$name" --iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso" --user=jimmy --password=jimster88 --time-zone=MST --post-install-template="C:\Users\jimmy\Documents\vmscripts\ubuntu-post-installer.sh"
+.\VBoxManage unattended install "$name" --iso=$iso --user=jimmy --password=jimster88 --time-zone=MST
 
 # start VM
 .\VBoxManage startvm "$name" 

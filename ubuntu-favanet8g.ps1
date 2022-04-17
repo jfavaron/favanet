@@ -1,10 +1,17 @@
 Write-Host 'Preparing to deploy Favanet Ubuntu virtual machine.'
 Write-Host 'Building VM now'
 
+# $name="iso-builder"
+# $name="ubuntu-favanet-1"
 $name="ubuntu-favanet-2"
-$vcpu=2
-$RAMGB=8
-$diskGB=30
+# $name="ubuntu-favanet-3"
+$vcpu=1
+$RAMGB=4
+$diskGB=20
+$iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
+# $iso="C:\Users\jimmy\Downloads\first-test.iso"
+# $iso="C:\Users\jimmy\Downloads\no-interactive.iso"
+# $iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso"
 
 # Convert GB to MB
 $disksize = $diskGB * 1024
@@ -28,10 +35,10 @@ cd "C:\Program Files\Oracle\VirtualBox\"
 .\VBoxManage storageattach "$name" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium D:\vms\$name.vdi
 
 # unattending install aka user name and computer name
-.\VBoxManage unattended install "$name" --iso="C:\Users\jimmy\Downloads\ubuntu-desktop.iso" --user=jimmy --password=jimster88 --time-zone=MST --post-install-template="C:\Users\jimmy\Documents\vmscripts\ubuntu-post-installer.sh"
+.\VBoxManage unattended install "$name" --iso=$iso --user=jimmy --password=password --time-zone=MST --post-install-template="C:\Users\jimmy\Documents\code\favanet\ubuntu-post-installer.sh"
 
 # start VM
 .\VBoxManage startvm "$name" 
 
 Write-Host 'Done Building VM - sending back to vmscripts folder'
-cd "C:\Users\jimmy\Documents\vmscripts"
+cd "C:\Users\jimmy\Documents\code\favanet"

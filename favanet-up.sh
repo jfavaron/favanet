@@ -5,7 +5,7 @@ echo '----------------'
 
 ### apt
 sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common net-tools openssh-server vim gcc python3-dev python3-pip -y
+sudo apt install apt-transport-https ca-certificates curl software-properties-common net-tools openssh-server git vim gcc python3-dev python3-pip xorriso isolinux -y
 
 ### apt-get
 sudo apt-get update
