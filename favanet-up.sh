@@ -28,23 +28,19 @@ sudo systemctl enable systemd-networkd-wait-online.service
 sudo echo "Wants=network-online.target" >> /lib/systemd/system/remote-fs-pre.target
 sudo echo "After=network-online.target" >> /lib/systemd/system/remote-fs-pre.target
 
-sudo mkdir /home/jimmy/media
-
-sudo mkdir /home/jimmy/media/music
-sudo mkdir /home/jimmy/media/movies
-sudo mkdir /home/jimmy/media/photo
-sudo mkdir /home/jimmy/media/tvshows
-sudo mkdir /home/jimmy/media/documents
-sudo chown jimmy:jimmy -R /home/jimmy/media/
+sudo mkdir /media/bigfundamental
+sudo mkdir /media/duncan
+sudo mkdir /media/nvr
+sudo mkdir /media/backups
 
 echo '----------------'
 echo 'Updating fstab'
 echo '----------------'
-sudo echo "duncan.local:/volume1/video/movies /home/jimmy/media/movies nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
-sudo echo "duncan.local:/volume1/documents/ /home/jimmy/media/documents nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
-sudo echo "duncan.local:/volume1/photo /home/jimmy/media/photo nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
-sudo echo "duncan.local:/volume1/music /home/jimmy/media/music nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
-sudo echo "duncan.local:/volume1/video/tvshows /home/jimmy/media/tvshows nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
+
+sudo echo "192.168.1.98:/volume1/movies /media/bigfundamental nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
+sudo echo "192.168.1.99:/volume1/family /media/duncan nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
+sudo echo "192.168.1.99:/volume1/nvr /media/nvr nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
+sudo echo "192.168.1.99:/volume1/backups /media/backups nfs _netdev,x-systemd.automount,user,noauto,nolock,intr,nfsvers=3 0 0" >> /etc/fstab
 
 echo '----------------'
 echo 'Adding Authorized Keys'
