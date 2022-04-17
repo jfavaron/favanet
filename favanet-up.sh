@@ -16,12 +16,20 @@ python3 -m pip --version
 echo '----------------'
 echo 'Updating and installing: docker'
 echo '----------------'
-## Installing Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-sudo usermod -aG docker jimmy
-pip3 install docker-compose
-mkdir /home/jimmy/docker
+
+# Check if Docker already exists
+DOCKER=get-docker.sh
+if test -f "$FILE"; then
+    echo "$FILE exists."
+else 
+    echo "$FILE does not exist."
+    ## Installing Docker
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sh get-docker.sh
+    sudo usermod -aG docker jimmy
+    pip3 install docker-compose
+    mkdir /home/jimmy/docker
+fi
 
 echo '----------------'
 echo 'Updating and installing: vscode'
@@ -68,3 +76,9 @@ rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server
 rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/dashy /home/jimmy/docker/
 cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-compose.yml
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
+
+
+
+# wget -O /usr/local/bin/favanet.sh https://raw.githubusercontent.com/jfavaron/favanet/master/favanet-up.sh
+# chmod +x /usr/local/bin/favanet.sh
+# favanet.sh
