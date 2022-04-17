@@ -13,12 +13,27 @@ sudo apt-get install python3-setuptools python3 libffi-dev libssl-dev nfs-common
 # sudo python3 -m easy_install install pip
 python3 -m pip --version
 
+echo '----------------'
+echo 'Updating and installing: docker'
+echo '----------------'
 ## Installing Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 sudo usermod -aG docker jimmy
 pip3 install docker-compose
 mkdir /home/jimmy/docker
+
+echo '----------------'
+echo 'Updating and installing: vscode'
+echo '----------------'
+
+### get vscode
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo apt update
+sudo apt install code -y
 
 echo '----------------'
 echo 'Installing and Mounting NFS'
