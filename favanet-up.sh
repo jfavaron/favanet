@@ -4,7 +4,6 @@ echo 'Updating and installing: apt and apt-get'
 echo '----------------'
 
 ### apt
-#sudo add-apt-repository ppa:webupd8team/atom -y
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common net-tools openssh-server vim gcc python3-dev python3-pip -y
 
