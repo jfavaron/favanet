@@ -9,7 +9,7 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 
 ### apt-get
 sudo apt-get update
-sudo apt-get install python3-setuptools python3 apt-get install libffi-dev libssl-dev vim nfs-common -y
+sudo apt-get install python3-setuptools python3 libffi-dev libssl-dev nfs-common -y
 # sudo python3 -m easy_install install pip
 python3 -m pip --version
 
@@ -17,7 +17,6 @@ python3 -m pip --version
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 sudo usermod -aG docker jimmy
-sudo usermod -aG docker ubuntu
 pip3 install docker-compose
 
 echo '----------------'
