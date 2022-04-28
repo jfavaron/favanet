@@ -93,5 +93,13 @@ echo $IP_ADDR
 
 su root
 adduser jimmy docker
-# wget -O /usr/local/bin/favanet.sh tinyurl.com/favanet && chmod +x /usr/local/bin/favanet.sh && favanet.sh && cd docker && docker-compose up -d
+
+### Examples ###
+## image should have get-favanet.sh ready that runs the following command to get the newest config and deploy it
 # wget -O /usr/local/bin/favanet.sh tinyurl.com/favanet && chmod +x /usr/local/bin/favanet.sh && favanet.sh
+## in order to get any docker container's backup/current state 
+# rsync -av --update /media/backups/ryzen/docker/<service> /home/jimmy/docker/
+## in order to exclude a path
+# rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/dashy /home/jimmy/docker/
+## backing up
+# rsync -av --update /home/jimmy/docker/ /media/backups/<host>/docker/
