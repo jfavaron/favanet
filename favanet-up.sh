@@ -80,8 +80,8 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDG9elOO+pAJL4GAhPAoJK45tKwR2/BqPLcpa
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoY+PlEa4DZYTJbWQzjewvogrfecr113PKCWNTjdrqpaaIyNZuoy4c+PQkZ6Q4UZGXq/G5QmoPQ8ynHk9KfnZQnZ88JGG/s6rZIt68oYJlWOi2C0luSEknxXctiJRItpbAya0bZtHvxkP2N7YoyZrXP2ICOyA3ZB74+GQA+z+khxpPcodYvjXc3Wl9a7y6jYUZ3sowODeJ5VB4Y4RYZZb4sZi3XLtflg3AQYRw34E89GsUcnq1zbLR6Jtxuh0VtNpG2WlCbjPlftGCBnfSg332+NOJJPBno7TShgAntMAiHhKeMAZc5LjxoMHIq5guhyAAGLS6F2/6I/YRlx0C/SkBbzKcTLfANadvFjcGzXCG3FMlqmcufqPpjWD77b5dYaHC+fPh3UKeC0jAnwmf/bB4myAfhwstPxPBInfLDXD6ETH4r8vsAgDS+idcaardPPE1CXY80jp4sjPu6ejxZrKm8GPXKSY2h81AVw089vqIlEOUNchS7rw345MoO9wJwzk= jimmy@tate.localdomain" >> /home/jimmy/.ssh/authorized_keys
 sudo chown jimmy:jimmy /home/jimmy/.ssh/authorized_keys
 
-rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/uptime-kuma /home/jimmy/docker/
-rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/dashy /home/jimmy/docker/
+# rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/uptime-kuma /home/jimmy/docker/
+# rsync -av --update --exclude 'plex/Library/Application Support/Plex Media Server/Cache/' /media/backups/ryzen/docker/dashy /home/jimmy/docker/
 cp /media/backups/ryzen/docker/docker-compose.yml /home/jimmy/docker/docker-compose.yml
 cp /media/backups/ryzen/docker/.env /home/jimmy/docker/.env
 sudo chown -Rf jimmy:jimmy /home/jimmy/docker/
